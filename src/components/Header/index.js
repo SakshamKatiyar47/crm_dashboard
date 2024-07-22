@@ -17,16 +17,16 @@ const Header = () => {
                         {/*logo*/}
                         <div className="col-sm-2">
                             <Link to={'/'} className="d-flex align-items-center logo">
-                                <img src={logo}/><span>Dashboard</span>
+                                <img src={logo} /><span>Dashboard</span>
                             </Link>
                         </div>
                         <div className="col-sm-3 d-flex align-items-center pl-4">
-                        <Button className="rounded-circle mr-3"><MdMenuOpen/></Button>
-                        <Search/>
+                            <Button className="rounded-circle mr-3"><MdMenuOpen /></Button>
+                            <Search />
                         </div>
                         <div className="col-sm-7 d-flex align-items-center justify-content-end">
-                        <Button className="rounded-circle mr-3"><IoMdNotifications/></Button>
-                        <Button className="rounded-circle mr-3"><FaCircleUser/></Button>
+                            <Button className="rounded-circle mr-3"><IoMdNotifications /></Button>
+                            <Button className="rounded-circle mr-3"><FaCircleUser /></Button>
                         </div>
 
                     </div>
