@@ -19,7 +19,7 @@ const Sidebar = () => {
                         <Button className='w-100' ><span className='icon'><MdSpaceDashboard /></span> Dashboard </Button>
                     </li>
                 </Link>
-                <Link to="/">
+                <Link to="/Deals">
                     <li>
                         <Button className='w-100' ><span className='icon'><FaHandshake /></span> Deals </Button>
                     </li>

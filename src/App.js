@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import { createContext, useContext, useState } from 'react';
+import Deals from './pages/Deals';
 
 
 const MyContext = createContext();
@@ -33,6 +34,7 @@ const values={
           <Routes>
             <Route path="/" exact={true} element={<Dashboard />} />
             <Route path="/dashboard" exact={true} element={<Dashboard />} />
+            <Route path="/deals" exact={true} element={<Deals />} />
           </Routes>
         </div>
       </div>
