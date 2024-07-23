@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import logo from '../../assests/images/logo.png';
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
@@ -7,8 +7,12 @@ import { MdMenu } from "react-icons/md";
 import Search from '../Search';
 import { FaCircleUser } from "react-icons/fa6";
 import { IoMdNotifications } from "react-icons/io";
+import { MyContext } from '../../App';
 
 const Header = () => {
+
+    const context = useContext(MyContext)
+
     return (
         <>
             <header className="d-flix align-items-center">
@@ -21,7 +25,12 @@ const Header = () => {
                             </Link>
                         </div>
                         <div className="col-sm-3 d-flex align-items-center pl-4">
-                            <Button className="rounded-circle mr-3"><MdMenuOpen /></Button>
+                            <Button className="rounded-circle mr-3" onClick={()=>context.setIsToggleSidebar
+                                (!context.setIsToggleSidebar)}>
+                                {
+                                    context.isToggleSidebr===false ? <MdMenuOpen /> : <MdMenu/>
+                                }
+                                </Button>
                             <Search />
                         </div>
                         <div className="col-sm-7 d-flex align-items-center justify-content-end">

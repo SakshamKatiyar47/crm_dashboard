@@ -70,6 +70,10 @@ header button.rounded-circle svg{
     flex: 0 0 18%;
     transition: all 0.3 ease-in-out;
 }
+.main .sidebarWrapper .toggle{
+    width: 0%;
+    flex: 0 0 0%;
+}
 .main .sidebarWrapper .sidebar{
     width: 18%;
     height: 100vh;
@@ -77,6 +81,10 @@ header button.rounded-circle svg{
     top: 70px;
     left: 0px;
     background: #fff;
+    transition: all 0.3s ease-in-out;
+}
+.main .sidebarWrapper.toggle .sidebar{
+    left: -100%;
 }
 .main .sidebarWrapper .sidebar ul{
     margin-bottom: 0px;
@@ -155,3 +163,111 @@ header button.rounded-circle svg{
     margin-left: 10px;
     font-size: 18px;
 }
+
+
+
+.main .dashboard-ui{
+    width: 80%;
+    flex: 0 0 80%;
+    transition: all 0.3s ease-in-out;
+}
+
+.right-content{
+    padding: 95px 30px;
+}
+.dashboardBox{
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 15px;
+    margin: 5px 5px 5px 5px;
+}
+.dashboardBox .col1 {
+    font-weight: 600;
+}
+.dashboardBox .col1 span{
+    font-size: 40px;
+    font-weight: 500;
+}
+.dashboardBox .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    border-radius: 5px;
+    background: white;
+}
+.dashboardBox .icon svg{
+    font-size: 50px;
+    color: #007AFF!important;
+}
+.dashboardBox .dash{
+    padding: 25px;
+}
+.card-border{
+    border-top: 5px solid #014B9C !important;
+    border-radius: 10px;
+}
+
+.task-add{
+    background: #F3F3F3;
+    border-radius: 5px;
+    margin: 10px 10px 10px 10px;
+}
+
+.task-icon{
+    height: 40px;
+    width: 50px;
+    background: #fa9653;
+    text-align: center;
+    color: #000000;
+    border-radius: 5px;
+    margin: 10px 0px 0px 130px
+}
+.task-icon2{
+    height: 40px;
+    width: 50px;
+    background: #bdffad;
+    text-align: center;
+    color: #000000;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin: 10px 0px 0px 10px
+}
+
+activity-feed {
+    padding: 15px;
+  }
+  .activity-feed .feed-item {
+    position: relative;
+    padding-bottom: 20px;
+    padding-left: 55px;
+    padding-top: 12px;
+  }
+  .activity-feed .feed-item:last-child {
+    border-color: transparent;
+  }
+  .activity-feed .feed-item:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 25px;
+    width: 10px;
+    height: 10px;
+    border-radius: 6px;
+    background: #fff;
+    border: 1px solid #f37167;
+  }
+  .activity-feed .feed-item .date {
+    position: relative;
+    top: -5px;
+    color: #8c96a3;
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+  .activity-feed .feed-item .text {
+    position: relative;
+    top: -3px;
+  }
+  
