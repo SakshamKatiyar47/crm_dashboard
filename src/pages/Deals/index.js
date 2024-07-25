@@ -5,7 +5,7 @@ const Deals = () => {
     return (
         <div className="right-content w-100">
             <div className="d-sm-flex align-items-center justify-content-between p-3 mb-4">
-                <h1 className="h3 mb-0 font-weight-bold text-body"></h1>
+                <h1 className="h3 mb-0 font-weight-bold text-body">Deals <br></br> <span className="deals_dash">deals / dashboard</span></h1>
                 <a href="#" className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                     className="text-white align-items-center"></i> <IoMdAddCircle/> Create Deals</a>
             </div>

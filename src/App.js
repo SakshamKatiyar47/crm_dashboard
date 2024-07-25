@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import { createContext, useContext, useState } from 'react';
 import Deals from './pages/Deals';
+import Contacts from './pages/Contacts';
 
 
 const MyContext = createContext();
@@ -18,26 +19,24 @@ function App() {
 const values={
   isTogglesSidebar,
   setIsToggleSidebar
-  
 
+  
 }
 
   return (
     <BrowserRouter>
     <MyContext.Provider value={values}>
-      <Header />
-      <div className='main d-flex'>
-        <div className={'sidebarWrapper'}>
-          <Sidebar />
-        </div>
+      <Header/>
+          <Sidebar/>
         <div className={'dashboard-ui'}>
           <Routes>
-            <Route path="/" exact={true} element={<Dashboard />} />
+            {/* <Route path="/" exact={true} element={<Dashboard />} /> */}
             <Route path="/dashboard" exact={true} element={<Dashboard />} />
             <Route path="/deals" exact={true} element={<Deals />} />
+            <Route path="/contacts" exact={true} element={<Contacts />} />
           </Routes>
         </div>
-      </div>
+
       </MyContext.Provider>
     </BrowserRouter>
   );

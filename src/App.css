@@ -65,12 +65,12 @@ header button.rounded-circle svg{
 
 
 
-.main .sidebarWrapper{
+/* .main .sidebarWrapper{
     width: 18%;
     flex: 0 0 18%;
     transition: all 0.3 ease-in-out;
-}
-.main .sidebarWrapper .toggle{
+} */
+/* .main .sidebarWrapper .toggle{
     width: 0%;
     flex: 0 0 0%;
 }
@@ -117,7 +117,7 @@ header button.rounded-circle svg{
 }
 .main .sidebarWrapper .sidebar ul li button:hover{
     background: #f1f1f1;
-}
+} */
 
 .logout{
    padding: 0px 25px;
@@ -166,15 +166,15 @@ header button.rounded-circle svg{
 
 
 
-.main .dashboard-ui{
-    width: 80%;
+.dashboard-ui{
+    width: 100%;
     flex: 0 0 80%;
     transition: all 0.3s ease-in-out;
 }
 
-.right-content{
-    padding: 95px 30px;
-}
+/* .right-content{
+    padding: 95px 0px;
+} */
 .dashboardBox{
     border-radius: 10px;
     overflow: hidden;
@@ -273,5 +273,21 @@ activity-feed {
   .activity-feed .feed-item .text {
     position: relative;
     top: -3px;
+  }
+  .deals_dash{
+    font-size: 15px;
+    color: #000000a1;
+    font-weight: 500;
+  }
+
+  .toggle-button{
+    display: none !important;
+  }
+
+  @media only screen and (min-width: 600px) {
+
+    .toggle-button{
+        display: flex !important;
+      }
   }
   

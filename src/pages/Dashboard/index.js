@@ -11,14 +11,14 @@ import { MdDoneOutline } from "react-icons/md";
 
 const Dashboard = () => {
     return (
-        <div className="right-content w-100">
+        <div className="right_content w-100">
             <div className="row">
                 <div className="col-md-4">
                     <div className="dashboardBox"
                         style={{ backgroundImage: 'linear-gradient(0deg,#011D3C, #007AFF)' }}>
                         <div className="d-flex dash" >
                             <div className="col1">
-                                <h3 className="text-white">Total Users</h3>
+                                <h3 className="text-white">Total customers</h3>
                                 <span className="text-white">277</span>
                             </div>
                             <div className="ml-auto">
@@ -173,7 +173,7 @@ const Dashboard = () => {
                         <div class="activity-feed">
                             <div className="feed-item">
                                 <div className="date">Sep 25</div>
-                                <div className="text">Responded to need <a href="single-need.php">“Volunteer opportunity”</a></div>
+                                <div className="text">Responded to need <a href="#">“Volunteer opportunity”</a></div>
                             </div>
                             <div className="feed-item">
                                 <div className="date">Sep 24</div>
@@ -181,19 +181,19 @@ const Dashboard = () => {
                             </div>
                             <div className="feed-item">
                                 <div className="date">Sep 23</div>
-                                <div className="text">Joined the group <a href="single-group.php">“Boardsmanship Forum”</a></div>
+                                <div className="text">Joined the group <a href="#">“Boardsmanship Forum”</a></div>
                             </div>
                             <div className="feed-item">
                                 <div className="date">Sep 21</div>
-                                <div className="text">Responded to need <a href="single-need.php">“In-Kind Opportunity”</a></div>
+                                <div className="text">Responded to need <a href="#">“In-Kind Opportunity”</a></div>
                             </div>
                             <div className="feed-item">
                                 <div className="date">Sep 18</div>
-                                <div className="text">Created need <a href="single-need.php">“Volunteer Opportunity”</a></div>
+                                <div className="text">Created need <a href="#">“Volunteer Opportunity”</a></div>
                             </div>
                             <div className="feed-item">
                                 <div className="date">Sep 17</div>
-                                <div className="text">Attending the event <a href="single-event.php">“Some New Event”</a></div>
+                                <div className="text">Attending the event <a href="#">“Some New Event”</a></div>
                             </div>
                         </div>
                     </div>
