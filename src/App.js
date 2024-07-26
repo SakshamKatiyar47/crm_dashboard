@@ -26,16 +26,16 @@ const values={
   return (
     <BrowserRouter>
     <MyContext.Provider value={values}>
-      <Header/>
+
           <Sidebar/>
-        <div className={'dashboard-ui'}>
+          
           <Routes>
-            {/* <Route path="/" exact={true} element={<Dashboard />} /> */}
-            <Route path="/dashboard" exact={true} element={<Dashboard />} />
+            <Route path="/" exact={true} element={<Dashboard />} />
+            <Route path="/dashboard"  exact={true} element={<Dashboard />} />
             <Route path="/deals" exact={true} element={<Deals />} />
             <Route path="/contacts" exact={true} element={<Contacts />} />
           </Routes>
-        </div>
+       
 
       </MyContext.Provider>
     </BrowserRouter>

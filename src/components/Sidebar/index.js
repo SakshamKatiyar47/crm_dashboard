@@ -1,61 +1,3 @@
-// import React, { useContext, useEffect } from 'react'
-// import Button from '@mui/material/Button';
-// import { MdSpaceDashboard } from "react-icons/md";
-// import { FaHandshake } from "react-icons/fa";
-// import { MdContacts } from "react-icons/md";
-// import { Link } from 'react-router-dom';
-// import { IoLogOut } from "react-icons/io5";
-// import { MyContext } from '../../App';
-// import { BsFileBarGraphFill } from "react-icons/bs";
-// import { BiSolidWallet } from "react-icons/bi";
-
-// const Sidebar = ({ isTogglesSidebar }) => {
-//     const context = useContext(MyContext);
-    
-//     return (
-//         <>
-//             {isTogglesSidebar && <div className="sidebar">
-//                 <ul>
-//                     <Link to="/">
-//                         <li>
-//                             <Button className='w-100' ><span className='icon'><MdSpaceDashboard /></span> Dashboard </Button>
-//                         </li>
-//                     </Link>
-//                     <Link to="/Deals">
-//                         <li>
-//                             <Button className='w-100' ><span className='icon'><FaHandshake /></span> Deals </Button>
-//                         </li>
-//                     </Link>
-//                     <Link to="/Contacts">
-//                         <li>
-//                             <Button className='w-100' ><span className='icon'><MdContacts /></span> Contacts </Button>
-//                         </li>
-//                     </Link>
-//                     <Link to="/">
-//                         <li>
-//                             <Button className='w-100' ><span className='icon'><BsFileBarGraphFill /></span> Sales </Button>
-//                         </li>
-//                     </Link>
-//                     <Link to="/">
-//                         <li>
-//                             <Button className='w-100' ><span className='icon'><BiSolidWallet /></span> Revenue </Button>
-//                         </li>
-//                     </Link>
-//                 </ul>
-
-//                 <div className="logout">
-//                     <div className="logout-box">
-//                         <Button variant="contained">Logout <IoLogOut /></Button>
-//                     </div>
-//                 </div>
-
-//             </div>}
-//         </>
-//     )
-// }
-
-// export default Sidebar;
-
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
@@ -64,28 +6,26 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Dashboard from '../../pages/Dashboard';
-import { MdSpaceDashboard } from "react-icons/md";
 import { FaHandshake } from "react-icons/fa";
-import { MdContacts } from "react-icons/md";
-import { Link } from 'react-router-dom';
-import { IoLogOut } from "react-icons/io5";
-import { MyContext } from '../../App';
 import { BsFileBarGraphFill } from "react-icons/bs";
-import { BiSolidWallet } from "react-icons/bi";
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import ContactsIcon from '@mui/icons-material/Contacts';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import { Button, styled } from '@mui/material';
+import { IoLogOut } from "react-icons/io5";
+import WalletIcon from '@mui/icons-material/Wallet';
+import Search from '../Search';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -109,22 +49,66 @@ function ResponsiveDrawer(props) {
     }
   };
 
+
+  const sidebarData = [
+    {
+      name: 'Dashboard',
+      icon: <DashboardIcon />,
+      redirectpage: '/dashboard'
+    },
+    {
+      name: 'Deals',
+      icon: <FaHandshake />,
+      redirectpage: '/deals'
+    },
+    {
+      name: 'Contacts',
+      icon: <ContactsIcon />,
+      redirectpage: '/contacts'
+    },
+    {
+      name: 'Sales',
+      icon: <BsFileBarGraphFill />,
+      redirectpage: '/sales'
+    },
+    {
+      name: 'Revenue',
+      icon: <WalletIcon />,
+      redirectpage: '/revenue'
+    },
+  ];
+
+
+
   const drawer = (
     <div>
-      <Toolbar />
+      <Typography variant="h5" noWrap component="div"
+        sx={{
+          padding: '19px',
+        }}>
+        CRM Dashboard
+      </Typography>
+      {/* <Toolbar /> */}
       <Divider />
       <List>
-        {['Dashboard', 'Deals', 'Contacts', 'Sales', 'Revenue',].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <DashboardIcon/>  : <ContactsIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
+        {sidebarData.map(({ icon, name, redirectpage }, index) => (
+          <ListItem key={name} disablePadding>
+            <Link to={redirectpage}>
+              <ListItemButton>
+                <ListItemIcon>
+                  {icon}
+                </ListItemIcon>
+                <ListItemText primary={name} />
+              </ListItemButton>
+            </Link>
           </ListItem>
         ))}
       </List>
+      <div className="logout">
+        <div className="logout-box">
+          <Button variant="contained">Logout <IoLogOut /></Button>
+        </div>
+      </div>
     </div>
   );
 
@@ -137,17 +121,31 @@ function ResponsiveDrawer(props) {
       <AppBar
         position="fixed"
         sx={{
+          color: 'black',
+          background: 'white',
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
-        }}
-      >
-        <Toolbar>
-      
-        <Typography variant="h5" noWrap component="div">
+        }}>
+        <Toolbar
+          sx={{
+            justifyContent: 'end'
+          }}>
+          <Typography className="crm_dashboard" variant="h5" noWrap component="div"
+            sx={{
+              width: '100%',
+              display: 'mobile',
+            }}>
             CRM Dashboard
           </Typography>
-          <AccountCircleIcon 
-          sx={{  }}/>
+          <Search />
+          <NotificationsIcon className="crm_notification"
+            sx={{
+              marginRight: '20px',
+              marginLeft: '20px',
+            }} />
+
+          <AccountCircleIcon className="crm_account"
+            sx={{}} />
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -157,7 +155,7 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-          
+
         </Toolbar>
       </AppBar>
       <Box
@@ -198,7 +196,7 @@ function ResponsiveDrawer(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-        <Dashboard/>
+        <Dashboard />
       </Box>
     </Box>
   );
