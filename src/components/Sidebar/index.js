@@ -84,7 +84,7 @@ function ResponsiveDrawer(props) {
     <div>
       <Typography variant="h5" noWrap component="div"
         sx={{
-          padding: '19px',
+          padding: '16px',
         }}>
         CRM Dashboard
       </Typography>
@@ -98,7 +98,7 @@ function ResponsiveDrawer(props) {
                 <ListItemIcon>
                   {icon}
                 </ListItemIcon>
-                <ListItemText primary={name} />
+                <ListItemText primary={name}/>
               </ListItemButton>
             </Link>
           </ListItem>
@@ -195,8 +195,8 @@ function ResponsiveDrawer(props) {
         component="main"
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
-        <Toolbar />
-        <Dashboard />
+        <Toolbar/>
+        <Dashboard/>
       </Box>
     </Box>
   );
