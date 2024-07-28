@@ -14,28 +14,28 @@ const MyContext = createContext();
 function App() {
 
   const [isTogglesSidebar, setIsToggleSidebar] = useState(false);
-  
 
-const values={
-  isTogglesSidebar,
-  setIsToggleSidebar
 
-  
-}
+  const values = {
+    isTogglesSidebar,
+    setIsToggleSidebar
+
+
+  }
 
   return (
     <BrowserRouter>
-    <MyContext.Provider value={values}>
+      <MyContext.Provider value={values}>
 
-          <Sidebar/>
-          
+        <Sidebar>
+
           <Routes>
             <Route path="/" exact={true} element={<Dashboard />} />
-            <Route path="/dashboard"  exact={true} element={<Dashboard />} />
+            <Route path="/dashboard" exact={true} element={<Dashboard />} />
             <Route path="/deals" exact={true} element={<Deals />} />
             <Route path="/contacts" exact={true} element={<Contacts />} />
           </Routes>
-       
+        </Sidebar>
 
       </MyContext.Provider>
     </BrowserRouter>
@@ -43,4 +43,4 @@ const values={
 }
 
 export default App;
-export {MyContext};
+export { MyContext };
